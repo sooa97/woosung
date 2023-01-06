@@ -1,0 +1,369 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif;}
+.wrap {width: 100%; overflow: hidden; position: relative;}
+
+
+header {width: 100%; position: fixed; z-index: 1000;}
+.innerheader {width: 96%; margin: 30px auto 0; border: 1px solid #fff; display: flex; height: 80px; box-sizing: border-box; line-height: 80px; position: relative;}
+.innerheader .logo {width: 239px; border-right: 1px solid #fff; box-sizing: border-box; position: relative;}
+.innerheader .logo1, .innerheader .logo2 {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.innerheader .logo2 {opacity: 0; transition: all 0.1s;}
+.innerheader .gnb {width: calc(100% - 239px - 259px); color: #fff; font-size: 17px;}
+.innerheader .gnb ul {display: flex; justify-content: center;}
+.innerheader .gnb li {margin: 0 30px;}
+.innerheader .tnb {width: 259px; border-left: 1px solid #fff; display: flex; box-sizing: border-box;}
+.innerheader .tnb ul {display: flex; justify-content: center; width: 181px; font-family: "Montserrat"; font-size: 12px; color: rgba(255,255,255,0.9);}
+.innerheader .tnb li {margin: 0 10px;}
+.innerheader .tnb li:nth-child(2) a {position: relative;}
+.innerheader .tnb li:nth-child(2) a:before {position: absolute; top: 4px; left: -10px; content: ''; background: rgba(255,255,255,0.9); width: 1px; height: 60%;}
+.innerheader .tnb .menu {width: 78px; border-left: 1px solid #fff; text-align: center; box-sizing: border-box; position: relative;} 
+.innerheader .tnb .menu i {font-size: 30px; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+
+/* innerheader.on */
+.innerheader.on {background: #fff; border: none; box-shadow: 3px 3px 3px rgba(0,0,0,0.1);}
+.innerheader.on .gnb {color: #000;}
+.innerheader.on .tnb {border-color: #bfbfbf;}
+.innerheader.on .tnb ul {color: #000;}
+.innerheader.on .tnb li:nth-child(2) a:before {background: #bfbfbf;}
+.innerheader.on .tnb .menu {border-color: #bfbfbf;}
+.innerheader.on .tnb .menu i {color: #000;}
+.innerheader.on .logo .logo1 {opacity: 0; transition: all 0.1s;}
+.innerheader.on .logo .logo2 {opacity: 1; transition: all 0.1s;}
+
+/* subMenu.on */
+.subMenu {width: 100%; height: 0px; background: #fff; position: absolute; top: 100%; left: 0px; box-sizing: border-box; line-height: normal; text-align: center;  overflow: hidden; transition: all 0.5s;}
+.subMenu .subWrap {width: 75%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.subMenu .subWrap div {float: left; width: 16.6666%; display: none; border-left: 1px solid #ddd; box-sizing: border-box; height: 220px;}
+.subMenu .subWrap div:last-child {border-right: 1px solid #ddd;}
+.subMenu .subWrap div li.tit {color: #222; font-size: 19px; margin-bottom: 15px; font-weight: 500;}
+.subMenu .subWrap div li {color: #555; font-size: 17px; margin-bottom: 5px;}
+.subMenu .subWrap div li a {display: block; width: 100%; height: 100%;}
+.subMenu.on div {display: block;}
+.subMenu.on {height: 310px; border-top: 1px solid #bfbfbf; transition: all 0.5s;}
+
+/* subMenu hover */
+.subMenu .subWrap div li a:hover,.subMenu .subWrap div li a:focus {color: rgb(227, 28, 28);}
+
+/* section.visual */
+.visual {width: 100%; height: 100vh; position: relative; overflow: hidden;}
+.visual .bg {background: url(../img/visual1.jpg) no-repeat center/cover; width: 120%; height: 130%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.visual .txtWrap {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fff; width: 90%; text-align: center;}
+.visual .txtWrap h3 {font-family: "Cormorant Garamond"; font-size: 88px; font-weight: 400;}
+.visual .txtWrap p {font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.8); margin-top: 10px;}
+.visual .txtWrap::before {position: absolute; content: ''; top: -60%; width: 1px; height: 60px; background: rgba(255,255,255,0.5);}
+.visual .txtWrap::after {position: absolute; content: ''; bottom: -70%; width: 1px; height: 60px; background: rgba(255,255,255,0.5);}
+
+/* section.product */
+.growth {width: 100%;}
+.growth .top {width: 100%; padding: 200px 7.5% 150px; position: relative; box-sizing: border-box;}
+.growth .top .tit {font-family: "Cormorant Garamond"; font-size: 102px; color: #6f917b; font-weight: 300;}
+.growth .top .smallTit {padding: 50px 0 25px 70px; color: #222; font-size: 21px; font-family: "Montserrat"; font-weight: 500;}
+.growth .top .txt {padding-left: 70px; font-size: 17px; color: #666; line-height: 1.8;}
+.growth .bgWrap {position: absolute; top: 190px; right: 0; background: url(../img/section1_bg1.png) no-repeat; width: 687px; height: 367px;}
+
+.growth .product {width: 100%;}
+.growth .product .tit {margin-bottom: 80px; text-align: center; font-family: "Montserrat"; font-weight: 500; font-size: 25px; color: #000;}
+
+.growth .product .toparea {width: 100%; display: flex;}
+.growth .product .toparea .left {width: 50%; height: 910px; overflow: hidden; position: relative;}
+.growth .product .toparea .left .bg {background: url(../img/prd_img1.jpg) no-repeat center/cover; width: 100%; height: 100%; transition: all 0.8s;}
+
+.growth .product .toparea .right {width: 50%; height: 910px; display: flex; justify-content: space-evenly; position: relative;}
+.growth .product .toparea .right .bgWrap1 {width: 40%; height: 580px; overflow: hidden; position: relative;}
+.growth .product .toparea .right .bgWrap2 {width: 40%; height: 580px; overflow: hidden; position: relative;}
+.growth .product .toparea .right .bgWrap1 .bg {width: 100%; height: 100%; background: url(../img/prd_img2.jpg) no-repeat center/cover; transition: all 0.8s;}
+.growth .product .toparea .right .bgWrap2 .bg {width: 100%; height: 100%; background: url(../img/prd_img3.jpg) no-repeat center/cover; transition: all 0.8s;}
+.growth .product .toparea .right .btmTxt {position: absolute; bottom: 10%; left: 7%;}
+.growth .product .toparea .right .btmTxt .title {font-family: "Cormorant Garamond"; font-weight: 300; font-size: 40px;}
+.growth .product .toparea .right .btmTxt .text {margin-top: 15px; color: #666; line-height: 1.8; font-size: 17px;}
+
+.growth .bottom {width: 100%; margin: 50px auto 250px; display: flex; justify-content: space-evenly;}
+.growth .bottom>div {position: relative; overflow: hidden; width: 29%; height: 552px;}
+.growth .bottom .left .bg {width: 100%; height: 100%; background: url(../img/prd_img4.jpg) no-repeat center/cover; transition: all 0.8s;}
+.growth .bottom .middle .bg {width: 100%; height: 100%; background: url(../img/prd_img5.jpg) no-repeat center/cover; transition: all 0.8s;}
+.growth .bottom .right .bg {width: 100%; height: 100%; background: url(../img/prd_img6.jpg) no-repeat center/cover; transition: all 0.8s;}
+/* .growth .bottom>div:before {border: 10px solid #6f917b; position: absolute; content: ''; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box; transform: scale(1.1);} */
+
+/* 공통요소 */
+.growth .product .innerTxt {position: absolute; top: 40px; left: 40px; color: #fff;}
+.growth .product .innerTxt .en {font-family: "Montserrat"; font-size: 18px; color: #fff; font-weight: 500;}
+.growth .product .innerTxt .ko {font-size: 25px; color: #fff;}
+.growth .product .img {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0; transition: all 0.8s;}
+.growth .product .img img {width: 100%;}
+
+/* hover */
+.growth .toparea .left:hover .bg,.growth .toparea .left:focus .bg {transform: scale(1.1); transition: all 0.8s;}
+.growth .toparea .right .bgWrap1:hover .bg,.growth .toparea .right .bgWrap1:focus .bg {transform: scale(1.1); transition: all 0.8s;}
+.growth .toparea .right .bgWrap2:hover .bg,.growth .toparea .right .bgWrap2:focus .bg {transform: scale(1.1); transition: all 0.8s;}
+.growth .toparea .left:hover .img,.growth .toparea .left:focus .img {opacity: 1; transition: all 0.8s;}
+.growth .toparea .right .bgWrap1:hover .img,.growth .toparea .right .bgWrap1:focus .img {opacity: 1; transition: all 0.8s;}
+.growth .toparea .right .bgWrap2:hover .img,.growth .toparea .right .bgWrap2:focus .img {opacity: 1; transition: all 0.8s;}
+.growth .bottom div:hover .bg,.growth .bottom div:focus .bg {transform: scale(1.1); transition: all 0.8s;}
+.growth .bottom div:hover .img,.growth .bottom div:focus .img {opacity: 1; transition: all 0.8s;}
+
+/* animation */
+@-webkit-keyframes more{
+    0% {opacity: 0; transform: scale(1);}
+    100% {opacity: 100%; transform: scale(1.2);}
+    0% {opacity: 0; transform: scale(1);}
+}
+@keyframes more{
+    0% {opacity: 0; transform: scale(1);}
+    100% {opacity: 100%; transform: scale(1.2);}
+    0% {opacity: 0; transform: scale(1);}
+}
+
+.growth .toparea .left:hover .img:before,.growth .toparea .right .bgWrap1:hover .img:before,.growth .toparea .right .bgWrap2:hover .img:before,.growth .bottom div:hover .img:before {width: 100%; height: 100%; position: absolute; top: 0%; left: 0%; content: ''; background: rgba(0,0,0,0.3); border-radius: 50%; opacity: 0; -webkit-animation: more 0.8s infinite ease-in-out; animation: more 0.8s infinite ease-in-out;}
+
+/* section.research */
+.research {width: 100%; padding-bottom: 250px;}
+.research .inner {width: 100%; position: relative; padding: 130px 7.5% 230px; background: #879a82; box-sizing: border-box; z-index: 1;}
+.research .inner .smallTit {font-size: 20px; text-align: center; color: #fff; font-family: "Montserrat"; font-weight: 500;}
+.research .inner .tit {font-size: 230px; color: #fff; font-family: "Cormorant Garamond"; font-weight: 300; line-height: 0.8;}
+.research .inner .txtWrap {width: 40%; margin: 120px 0 0 90px;}
+.research .inner .txtWrap .title {font-size: 19px; margin-bottom: 25px; color: #fff; font-weight: 500;}
+.research .inner .txtWrap .text {font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.8;}
+.research .inner .bgWrap {width: 57%; height: 910px; position: absolute; top: 40%; right: 0; z-index: -1;}
+.research .inner .bgWrap .bg {width: 100%; height: 100%; background: url(../img/sec2_bg.jpg) no-repeat right/cover;}
+.research .inner .bgWrap .img {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); display: none;}
+
+/* animation */
+.research .inner .bgWrap:hover .img:before,.research .inner .bgWrap:focus .img:before {width: 100%; height: 100%; position: absolute; top: 0%; left: 0%; content: ''; background: rgba(0,0,0,0.3); border-radius: 50%; opacity: 0; -webkit-animation: more 0.8s infinite ease-in-out;animation: more 0.8s infinite ease-in-out;}
+
+
+/* section.merit */
+.merit {padding: 200px 0;}
+.merit .tit {text-align: center; font-family: "Montserrat"; font-weight: 500; font-size: 25px; color: #000;}
+.merit .inner {margin-top: 80px; width: 100%; position: relative;}
+.merit .inner::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: #7f7f7a;}
+.merit .inner .list {display: flex; justify-content: center; width: 80%; margin: 0 auto;}
+.merit .inner .list li {text-align: center; padding: 0 3.5%; word-break: keep-all; position: relative;}
+.merit .inner .list li::before {content: ''; position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; border: 6px solid #fff; box-sizing: border-box; background: #333;}
+.merit .inner .list li .num {font-family: "Montserrat"; font-size: 15px; margin-top: 15px; font-weight: 500; color: #222;}
+.merit .inner .list li .img {width: 146px; height: 146px; margin: 80px auto 55px;}
+.merit .inner .list li .img svg {width: 100%;}
+
+
+.merit .inner .list li .title {font-size: 23px; font-weight: 500; color: #222; margin-bottom: 20px;}
+.merit .inner .list li .text {font-size: 17px; font-weight: 300; line-height: 1.8; color: rgba(0,0,0,0.8);}
+
+
+/* section.news */
+.news {width: 100%;}
+.news .inner {width: 100%; padding: 140px 0 160px; background: url(../img/sec4_bg.jpg) no-repeat center top; background-attachment: fixed;}
+.news .inner .smallTit {text-align: center; font-size: 20px; font-family: "Montserrat"; font-weight: 500; color: #fff;}
+.news .inner .tit {font-size: 100px; color: #fff; font-family: "Cormorant Garamond"; margin: 45px 0 70px; text-align: center; font-weight: 300;}
+
+.news .inner .list {width: 90%; margin: 0 auto; position: relative;}
+.news .inner .list li {background: #fff; padding: 50px 40px; box-sizing: border-box; margin: 0 25px; height: 380px;}
+.news .inner .list li .smallNews {font-family: "Montserrat"; font-size: 16px; color: #222; font-weight: 500;}
+.news .inner .list li .listTit {margin: 20px 0; font-size: 24px; color: #222; font-weight: 500; word-break: keep-all; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.news .inner .list li .txt {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;/* 세트로 작성 */font-size: 17px; color: #666; line-height: 1.8; font-weight: 300;}
+.news .inner .list li .bottom {display: flex; justify-content: space-between;  margin-top: 35px;}
+.news .inner .list li .bottom .btn {width: 50px; height: 50px; border: 1px solid #777; border-radius: 50%; position: relative;}
+.news .inner .list li .bottom .btn a {display: block; width: 100%; height: 100%;}
+.news .inner .list li .bottom .btn i {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #777;}
+.news .inner .list li .bottom .date {line-height: 50px; color: #666; font-weight: 300;}
+
+/* slick-arrow */
+.news .slick-prev {position: absolute; bottom: -70px; left: 25px; z-index: 100; border: none; background: none; text-indent: -999999px;}
+.news .slick-prev:before {position: absolute; text-indent: 0; content: ''; width: 30px; height: 19px; left: 0; top: 0; background: url(../img/news_prev.png) no-repeat;}
+.news .slick-next {position: absolute; bottom: -70px; left: 110px; z-index: 100; border: none; background: none; text-indent: -999999px;}
+.news .slick-next:before {position: absolute; text-indent: 0; content: ''; width: 30px; height: 19px; right: 0; top: 0; background: url(../img/news_next.png) no-repeat;}
+
+
+/* section.farm */
+.farm {width: 100%; display: flex;}
+.farm .left {width: 50%; padding: 7%; box-sizing: border-box; color: #fff; position: relative;}
+.farm .left .bg {background: url(../img/sec5_bg1.jpg) no-repeat center/cover; width: 100%; height: 720px;}
+.farm .left .txtBox {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.farm .left .txtBox .tit {font-family: "Montserrat"; font-size: 20px; text-align: center; margin-bottom: 30px; font-weight: 500;}
+.farm .left .txtBox .txt {font-size: 17px; font-weight: 300; text-align: center; line-height: 1.8; margin-bottom: 35px;}
+.farm .left .txtBox .img {text-align: center; margin-bottom: 60px;}
+.farm .left .txtBox .btn {width: 275px; height: 64px; border: 1px solid #fff; border-radius: 50px;}
+.farm .left .txtBox .btn a {width: 100%; height: 100%; display: block; padding: 20px 45px; box-sizing: border-box; overflow: hidden;}
+.farm .left .txtBox .btn a .go {float: left;}
+.farm .left .txtBox .btn a .arr {float: right;}
+.farm .left .txtBox .btn a .arr img {margin-bottom: 6px;}
+
+.farm .right {width: 50%; background: #ddd; padding: 7%; box-sizing: border-box;}
+.farm .right .txtBox {position: relative; text-align: center;}
+.farm .right .txtBox:before {content: ''; width: 1px; height: 50px; background: #000; display: block; margin: 5px auto 60px;}
+.farm .right .txtBox .tit {font-family: "Montserrat"; font-size: 20px; margin-bottom: 30px; font-weight: 500;}
+.farm .right .txtBox .txt {font-size: 17px; font-weight: 300; line-height: 1.8; margin-bottom: 35px; color: #666;}
+.farm .right .txtBox .img {text-align: center; margin-bottom: 60px;}
+.farm .right .slide {width: 100%; position: relative;}
+.farm .right .slide li {width: 100%; position: relative;}
+.farm .right .slide li img {width: 100%;}
+.farm .right .slide li .bottomTxt {position: absolute; bottom: 0; left: 0; text-align: center; color: #fff; background: rgba(0,0,0,0.7); width: 100%; padding: 15px 0;}
+
+/* slick-arrow */
+.farm .slick-prev {position: absolute; bottom: 22px; left: 50px; z-index: 100; border: none; background: none; text-indent: -999999px;}
+.farm .slick-prev:before {position: absolute; text-indent: 0; content: ''; width: 10px; height: 20px; left: 0; top: 0; background: url(../img/sc_prev.png) no-repeat;}
+.farm .slick-next {position: absolute; bottom: 22px; right: 50px; z-index: 100; border: none; background: none; text-indent: -999999px;}
+.farm .slick-next:before {position: absolute; text-indent: 0; content: ''; width: 10px; height: 20px; right: 0; top: 0; background: url(../img/sc_next.png) no-repeat;}
+
+
+/* section.recruit */
+.recruit {width: 100%;}
+.recruit .inner {width: 100%; background: url(../img/sec6_bg.jpg) no-repeat center/cover; text-align: center; color: #fff; padding: 130px 0 100px;}
+.recruit .inner .smallTit {font-family: "Montserrat"; font-size: 20px; font-weight: 500; margin-bottom: 50px;}
+.recruit .inner .tit {font-family: "Cormorant Garamond"; font-size: 102px; margin-bottom: 30px; font-weight: 300;}
+.recruit .inner .txt {font-size: 17px; font-weight: 300; margin-bottom: 45px;}
+.recruit .inner .btn {width: 275px; height: 64px; border: 1px solid #fff; border-radius: 50px; margin: 0 auto;}
+.recruit .inner .btn a {width: 100%; height: 100%; display: block; padding: 20px 45px; box-sizing: border-box; overflow: hidden;}
+.recruit .inner .btn a .go {float: left;}
+.recruit .inner .btn a .arr {float: right;}
+.recruit .inner .btn a .arr img {margin-bottom: 6px;}
+
+
+/* footer */
+footer {background: #dcdcdc; width: 100%;}
+footer .topArea {width: 100%; padding: 40px 5% 35px; display: flex; box-sizing: border-box; border-bottom: 1px solid #b0b0b0; position: relative;}
+footer .topArea .logo {width: 220px;}
+footer .topArea .txtWrap {width: calc(100% - 495px); font-size: 16px; color: rgba(0,0,0,0.8); line-height: 2;}
+footer .topArea .txtWrap ul {display: flex;}
+footer .topArea .txtWrap ul .email {padding-right: 11px; margin-right: 10px; position: relative;}
+footer .topArea .txtWrap ul .email:before {position: absolute; top: 30%; right: 0; width: 1px; height: 50%; content: ''; background: rgba(0,0,0,0.5);}
+footer .topArea .btn {width: 275px; height: 64px; border: 1px solid #bbb; border-radius: 50px; color: #777; position: absolute; top: 40px; right: 5%;}
+footer .topArea .btn a {width: 100%; height: 100%; display: block; padding: 20px 45px; box-sizing: border-box; overflow: hidden; position: relative;}
+footer .topArea .btn a .go {float: left;}
+footer .topArea .btn a .arr {color: #444; font-size: 22px; position: absolute; top: 50%; right: 45px; transform: translateY(-50%);}
+
+footer .bottomArea {width: 100%; font-size: 15px; color: rgba(0,0,0,0.8); padding: 25px 0 25px calc(220px + 5%); box-sizing: border-box}
+
+
+/* responsive */
+@media screen and (max-width: 1600px) {
+    .research .inner .bgWrap {right: -5%;}
+    .merit .inner .list {width: 95%;}
+    .news .inner .list li {height: 350px;}
+    .news .inner .list li .smallNews {font-size: 14px;}
+    .news .inner .list li .listTit {font-size: 21px;}
+    .news .inner .list li .txt {font-size: 15px;}
+    .news .inner .list li .bottom .date {font-size: 14px;}
+}
+
+@media screen and (max-width: 1399px) {
+    .innerheader {justify-content: space-between;}
+    .innerheader .gnb {display: none;}
+    .visual .txtWrap h3 {font-size: 70px;}
+    
+    .growth .top {padding: 200px 5% 150px;}
+    .growth .top .tit {font-size: 88px;}
+    .growth .top .smallTit {padding-left: 50px;}
+    .growth .top .txt br {display: none;}
+    .growth .top .txt {word-break: keep-all; padding-left: 50px;}
+    .growth .bgWrap {width: 40%; background-size: 100% auto;}
+    .growth .product .toparea {flex-wrap: wrap;}
+    .growth .product .toparea .left {width: 100%; height: 460px; margin-bottom: 40px;}
+    .growth .product .toparea .right {width: 100%; height: 460px;}
+    .growth .product .toparea .right .btmTxt {display: none;}
+    .growth .product .toparea .right .bgWrap1 {width: 46%; height: 100%;}
+    .growth .product .toparea .right .bgWrap2 {width: 46%; height: 100%;}
+    
+    .research {padding-bottom: 200px;}
+    .research .inner {padding-bottom: 150px;}
+    .research .inner .bgWrap {height: 560px;}
+    .research .inner .txtWrap {margin-left: 0; width: 60%;}
+    .research .inner .bgWrap .img {display: block;}
+    
+    .merit {padding-top: 0;}
+
+    .news .inner .list li {height: 380px;}
+    .news .inner .list li .smallNews {font-size: 16px;}
+    .news .inner .list li .listTit {font-size: 24px;}
+    .news .inner .list li .txt {font-size: 17px;}
+    .news .inner .list li .bottom .date {font-size: 16px;}
+
+    .farm {flex-wrap: wrap;}
+    .farm .left {width: 100%;}
+    .farm .right {width: 100%;}
+    .farm .left .bg {background: url(../img/sec5_bg1.jpg) no-repeat bottom/cover; height: 640px;}
+}
+
+@media screen and (max-width: 1060px) {
+    .research .inner .bgWrap {width: 120%; position: relative; margin-top: -100px; right: 0;}
+    .research .inner .tit {font-size: 200px;}
+    .research .inner .txtWrap {margin-top: 80px; width: 100%;}
+    .research .inner {padding-bottom: 130px;}
+
+    .recruit .inner .tit {font-size: 85px;}
+    
+    footer .topArea {flex-wrap: wrap;}
+    footer .topArea .logo {width: 100%; margin-bottom: 20px;}
+    footer .topArea .txtWrap {width: 100%;}
+    footer .bottomArea {padding-left: 5%;}
+}
+
+@media screen and (max-width: 812px) {
+    .innerheader {height: 60px;}
+    .innerheader .tnb {width: 60px; border: none;}
+    .innerheader .tnb ul {display: none;}
+    .innerheader .tnb .menu {width: 60px;}
+    
+    .visual .txtWrap h3 {font-size: 60px;}
+    .visual .txtWrap p {font-size: 16px;}
+    
+    .growth .top {padding: 120px 3%;}
+    .growth .bgWrap {top: 70px; width: 50%;}
+    .growth .top .tit {font-size: 60px;}
+    .growth .top .smallTit {padding-top: 20px; padding-left: 4%;}
+    .growth .top .txt {font-size: 16px; padding-left: 4%;}
+    
+    .growth .bottom {flex-wrap: wrap; margin-top: 30px; margin-bottom: 100px;}
+    .growth .bottom .left {width: 93%; height: 360px; margin-bottom: 30px;}
+    .growth .bottom>div {width: 45%; height: 300px;}
+    .growth .product .innerTxt {top: 30px; left: 30px;}
+    .growth .product .innerTxt .en {font-size: 16px;}
+    .growth .product .innerTxt .ko {font-size: 20px;}
+
+    .research {padding-bottom: 120px;}
+    .research .inner {padding: 130px 3%;}
+    .research .inner .bgWrap {display: none;}
+    .research .inner .smallTit {margin-bottom: 15px;}
+    .research .inner .tit {font-size: 100px;}
+    .research .inner .txtWrap .text br {display: none;}
+
+    .merit {padding-bottom: 100px;}
+    .merit .inner .list {flex-wrap: wrap; width: 100%;}
+    .merit .inner .list li {width: 50%; padding: 0; margin-bottom: 50px;}
+    .merit .inner::after {content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #7f7f7a; z-index: -1;}
+    .merit .inner .list li .title {font-size: 20px;}
+    .merit .inner .list li .text {font-size: 14px;}
+
+    .news .inner .tit {font-size: 60px;}
+    .news .inner .list li {height: auto;}
+    .news .inner .list li .txt {display: none;}
+    .news .inner .list li .bottom .btn {background: #86c312; border: none;}
+    .news .inner .list li .bottom .btn i {color: #fff;}
+    
+    .farm .left {padding: 5%;}
+    .farm .left .bg {height: 400px;}
+    .farm .right .txtBox:before {display: none;}
+
+    .recruit .inner {padding: 80px 0;}
+    .recruit .inner .tit {font-size: 60px;}
+
+    footer .topArea .btn {position: relative; width: 100%; height: 56px; right: 0; top: 0; margin-top: 20px; font-size: 14px;}
+    footer .topArea .btn a {padding: 0 30px; }
+    footer .topArea .btn a span {position: absolute; top: 50%; transform: translateY(-50%);}
+    footer .topArea .btn a .arr {right: 30px;}
+}
